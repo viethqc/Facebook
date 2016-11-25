@@ -1,0 +1,41 @@
+{
+	"manifest_version": 2,
+	"name": "Update Status",
+	"version": "1.0",
+	
+	"background": {
+		"scripts": ["background.js", "jquery-3.1.1.min.js"]
+	},
+	
+	"content_scripts": [{
+		"matches": [ "https://*/*"],
+		"js": ["contentscripts.js", "jquery-3.1.1.min.js", "popup.js"]
+	}],
+	
+	"browser_action": {
+		"default_icon": "icon/icon16.png",
+		"default_popup": "popup.html"
+	},
+		
+	"homepage_url": "http://www.iconarchive.com/",
+	
+	"icons":
+	{
+		"16": "icon/icon16.png",
+		"32": "icon/icon32.png",
+		"64": "icon/icon64.png"
+	},
+	
+	"permissions": [ 	"nativeMessaging", 
+						"webNavigation", 
+						"tabs", 
+						"http://*/*", 
+						"https://*/*",
+						"http://*/", 
+						"https://*/", 
+						"debugger", 
+						"webRequest", 
+						"webRequestBlocking", 
+						"pushMessaging", 
+						"notifications" ]
+}
